@@ -1,0 +1,40 @@
+CREATE TABLE posts (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  title VARCHAR(255),
+  tags VARCHAR(255),
+  long_text TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  active BOOLEAN,
+  created_by VARCHAR(255)
+);
+
+INSERT INTO posts (title, tags, long_text, active, created_by)
+VALUES
+  ('Sample Title 1', 'tag1,tag2', 'This is a sample long text.', 1, 'Author 1'),
+  ('Sample Title 2', 'tag3,tag4', 'Another sample text.', 0, 'Author 2'),
+  ('Sample Title 3', 'tag2,tag4', 'Yet another sample text.', 1, 'Author 1');
+
+  // import { query } from "@/lib/db";
+
+// export async function GET(request: Request) {
+//   return new Response("Hello, Next.js!");
+// }
+
+// export async function POST(request: Request) {
+//   //   const { title, tags, long_text } = JSON.parse(req.body);
+
+//   //   const body = await JSON.parse(req.body);
+
+//   console.log(request.body);
+
+//   //   await query({
+//   //     query:
+//   //       "INSERT INTO posts (title, tags, long_text, active, created_by) VALUES (?, ?, ?, ?, ?)",
+//   //     values: [title, tags, long_text, "1", "Piotr"],
+//   //   });
+// }
+
+// export default function handler(req, res) {
+//     res.status(200).json({ name: 'John Doe' })
+//   }
